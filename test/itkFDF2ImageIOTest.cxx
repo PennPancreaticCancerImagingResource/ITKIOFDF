@@ -17,17 +17,17 @@
  *=========================================================================*/
 #include "itkImageFileReader.h"
 
-#include "itkFDFImageIOFactory.h"
-#include "itkFDFImageIO.h"
+#include "itkFDF2ImageIOFactory.h"
+#include "itkFDF2ImageIO.h"
 
 #include "itkImage.h"
 
 int
-itkFDFImageIOTest(int argc, char * argv[])
+itkFDF2ImageIOTest(int argc, char * argv[])
 {
   if (argc < 3)
   {
-    std::cerr << "Usage: itkFDFImageIO <output_directory> <inputfile" << std::endl;
+    std::cerr << "Usage: itkFDF2ImageIO <output_directory> <inputfile" << std::endl;
     return EXIT_FAILURE;
   }
   using PixelType = float;
@@ -36,8 +36,8 @@ itkFDFImageIOTest(int argc, char * argv[])
   using ImageType = itk::Image<PixelType, Dimension>;
   using ReaderType = itk::ImageFileReader<ImageType>;
 
-  // Register FDF Factory
-  itk::FDFImageIOFactory::RegisterOneFactory();
+  // Register FDF2 Factory
+  itk::FDF2ImageIOFactory::RegisterOneFactory();
 
   ReaderType::Pointer reader = ReaderType::New();
 
