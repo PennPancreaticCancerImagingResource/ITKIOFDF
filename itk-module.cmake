@@ -9,7 +9,7 @@ file(READ "${MY_CURRENT_DIR}/README.rst" DOCUMENTATION)
 # ITK
 
 # define the dependencies of the include module and the tests
-itk_module(IOFDF
+itk_module(IOFDF2
   ENABLE_SHARED
   DEPENDS
     ITKNIFTI
