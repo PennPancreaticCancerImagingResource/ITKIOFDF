@@ -1,4 +1,4 @@
-/*=========================================================================
+FDF2/*=========================================================================
  *
  *  Copyright NumFOCUS
  *
@@ -15,25 +15,25 @@
  *  limitations under the License.
  *
  *=========================================================================*/
-#ifndef itkFDFImageIOFactory_h
-#define itkFDFImageIOFactory_h
-#include "IOFDFExport.h"
+#ifndef itkFDF2ImageIOFactory_h
+#define itkFDF2ImageIOFactory_h
+#include "IOFDF2Export.h"
 #include "itkObjectFactoryBase.h"
 #include "itkImageIOBase.h"
 
 namespace itk
 {
-/** \class FDFImageIOFactory
- *  \ingroup ITKIOFDF
- * \brief Create instances of FDFImageIO objects using an object factory.
+/** \class FDF2ImageIOFactory
+ *  \ingroup ITKIOFDF2
+ * \brief Create instances of FDF2ImageIO objects using an object factory.
  */
-class IOFDF_EXPORT FDFImageIOFactory : public ObjectFactoryBase
+class IOFDF2_EXPORT FDF2ImageIOFactory : public ObjectFactoryBase
 {
 public:
-  ITK_DISALLOW_COPY_AND_MOVE(FDFImageIOFactory);
+  ITK_DISALLOW_COPY_AND_MOVE(FDF2ImageIOFactory);
 
   /** Standard class type alias. */
-  using Self = FDFImageIOFactory;
+  using Self = FDF2ImageIOFactory;
   using Superclass = ObjectFactoryBase;
   using Pointer = SmartPointer<Self>;
   using ConstPointer = SmartPointer<const Self>;
@@ -48,19 +48,19 @@ public:
   itkFactorylessNewMacro(Self);
 
   /** Run-time type information (and related methods). */
-  itkTypeMacro(FDFImageIOFactory, ObjectFactoryBase);
+  itkTypeMacro(FDF2ImageIOFactory, ObjectFactoryBase);
 
   /** Register one factory of this type  */
   static void
   RegisterOneFactory()
   {
-    FDFImageIOFactory::Pointer FdfFactory = FDFImageIOFactory::New();
+    FDF2ImageIOFactory::Pointer FdfFactory = FDF2ImageIOFactory::New();
     ObjectFactoryBase::RegisterFactoryInternal(FdfFactory);
   }
 
 protected:
-  FDFImageIOFactory();
-  ~FDFImageIOFactory() override;
+  FDF2ImageIOFactory();
+  ~FDF2ImageIOFactory() override;
 };
 
 

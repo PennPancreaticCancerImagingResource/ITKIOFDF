@@ -16,7 +16,7 @@
  *
  *=========================================================================*/
 
-#include "itkFDFCommonImageIO.h"
+#include "itkFDF2CommonImageIO.h"
 
 namespace itk
 {

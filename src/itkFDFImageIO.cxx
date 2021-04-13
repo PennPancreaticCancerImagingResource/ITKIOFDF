@@ -15,8 +15,8 @@
  *  limitations under the License.
  *
  *=========================================================================*/
-#include "itkFDFImageIO.h"
-#include "itkFDFCommonImageIO.h"
+#include "itkFDF2ImageIO.h"
+#include "itkFDF2CommonImageIO.h"
 
 #include "itkByteSwapper.h"
 #include "itkRGBPixel.h"
@@ -29,7 +29,7 @@ namespace itk
 {
 
 bool
-FDFImageIO::CanReadFile(const char * file)
+FDF2ImageIO::CanReadFile(const char * file)
 {
   this->SetFileName(file);
 
@@ -42,14 +42,14 @@ FDFImageIO::CanReadFile(const char * file)
   }
 
   bool                   extensionFound = false;
-  std::string::size_type FDFPos = filename.rfind(".fdf");
-  if ((FDFPos != std::string::npos) && (FDFPos == filename.length() - 4))
+  std::string::size_type FDF2Pos = filename.rfind(".FDF2");
+  if ((FDF2Pos != std::string::npos) && (FDF2Pos == filename.length() - 4))
   {
     extensionFound = true;
   }
 
-  FDFPos = filename.rfind(".FDF");
-  if ((FDFPos != std::string::npos) && (FDFPos == filename.length() - 4))
+  FDF2Pos = filename.rfind(".FDF2");
+  if ((FDF2Pos != std::string::npos) && (FDF2Pos == filename.length() - 4))
   {
     extensionFound = true;
   }
@@ -77,7 +77,7 @@ FDFImageIO::CanReadFile(const char * file)
 }
 
 void
-FDFImageIO::ReadImageInformation()
+FDF2ImageIO::ReadImageInformation()
 {
   if (!this->CanReadFile(m_FileName.c_str()))
     RAISE_EXCEPTION();
@@ -106,7 +106,7 @@ FDFImageIO::ReadImageInformation()
       break;
     }
 
-    // Formats the lines in the FDF header such as removing whitespace between {}
+    // Formats the lines in the FDF2 header such as removing whitespace between {}
     line = ParseLine(line);
     Tokenize(line, tokens, " ;");
 
@@ -307,10 +307,10 @@ FDFImageIO::ReadImageInformation()
 
 
 void
-FDFImageIO::ReadVolume(void *)
+FDF2ImageIO::ReadVolume(void *)
 {}
 
-// const std::type_info& FDFImageIO::GetPixelType() const
+// const std::type_info& FDF2ImageIO::GetPixelType() const
 // {
 //   switch(m_PixelType)
 //     {
@@ -349,7 +349,7 @@ FDFImageIO::ReadVolume(void *)
 //   return typeid(ImageIOBase::UnknownType);
 // }
 
-// unsigned int FDFImageIO::GetComponentSize() const
+// unsigned int FDF2ImageIO::GetComponentSize() const
 // {
 //     switch(m_PixelType)
 //     {
@@ -390,7 +390,7 @@ FDFImageIO::ReadVolume(void *)
 // }
 
 void
-FDFImageIO::Read(void * buffer)
+FDF2ImageIO::Read(void * buffer)
 {
   std::ifstream inFile(m_FileName.c_str(), std::ios::in | std::ios::binary);
 
@@ -422,12 +422,12 @@ FDFImageIO::Read(void * buffer)
 }
 
 
-FDFImageIO::FDFImageIO() = default;
+FDF2ImageIO::FDF2ImageIO() = default;
 
-FDFImageIO::~FDFImageIO() = default;
+FDF2ImageIO::~FDF2ImageIO() = default;
 
 void
-FDFImageIO::PrintSelf(std::ostream & os, Indent indent) const
+FDF2ImageIO::PrintSelf(std::ostream & os, Indent indent) const
 {
   Superclass::PrintSelf(os, indent);
   //   os << indent << "PixelType " << m_PixelType << "\n";
@@ -444,14 +444,14 @@ FDFImageIO::PrintSelf(std::ostream & os, Indent indent) const
 }
 
 bool
-FDFImageIO::CanWriteFile(const char * /* name */)
+FDF2ImageIO::CanWriteFile(const char * /* name */)
 {
-  // not possible to write a fdf file
+  // not possible to write a FDF2 file
   return false;
 }
 
 void
-FDFImageIO::SwapBytesIfNecessary(void * buffer, unsigned long numberOfPixels)
+FDF2ImageIO::SwapBytesIfNecessary(void * buffer, unsigned long numberOfPixels)
 {
   switch (this->GetComponentType())
   {
@@ -571,15 +571,15 @@ FDFImageIO::SwapBytesIfNecessary(void * buffer, unsigned long numberOfPixels)
 }
 
 void
-FDFImageIO::WriteImageInformation()
+FDF2ImageIO::WriteImageInformation()
 {
-  // not possible to write a fdf file
+  // not possible to write a FDF2 file
 }
 
 void
-FDFImageIO::Write(const void * /* buffer */)
+FDF2ImageIO::Write(const void * /* buffer */)
 {
-  // not possible to write a fdf file
+  // not possible to write a FDF2 file
 }
 
 } // end namespace itk

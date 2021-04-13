@@ -1,6 +1,6 @@
 cmake_minimum_required(VERSION 3.10.2)
-project(IOFDF)
-set(IOFDF_LIBRARIES IOFDF)
+project(IOFDF2)
+set(IOFDF2_LIBRARIES IOFDF2)
 
 if(NOT ITK_SOURCE_DIR)
   find_package(ITK REQUIRED)

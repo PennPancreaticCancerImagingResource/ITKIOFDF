@@ -15,10 +15,10 @@
  *  limitations under the License.
  *
  *=========================================================================*/
-#ifndef itkFDFCommonImageIO_h
-#define itkFDFCommonImageIO_h
+#ifndef itkFDF2CommonImageIO_h
+#define itkFDF2CommonImageIO_h
 
-#include <itkFDFImageIO.h>
+#include <itkFDF2ImageIO.h>
 #include <itkIndent.h>
 
 #include <iostream>

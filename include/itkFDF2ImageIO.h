@@ -16,28 +16,28 @@
  *
  *=========================================================================*/
 
-#ifndef itkFDFImageIO_h
-#define itkFDFImageIO_h
-#include "IOFDFExport.h"
+#ifndef itkFDF2ImageIO_h
+#define itkFDF2ImageIO_h
+#include "IOFDF2Export.h"
 #include "itkImageIOBase.h"
 
 namespace itk
 {
 
-/** \class FDFImageIO
+/** \class FDF2ImageIO
  *
- * \brief ImageIO object for reading and writing FDF images
+ * \brief ImageIO object for reading and writing FDF2 images
  *
- * \ingroup IOIOFDF
+ * \ingroup IOIOFDF2
  *
  */
-class IOFDF_EXPORT FDFImageIO : public ImageIOBase
+class IOFDF2_EXPORT FDF2ImageIO : public ImageIOBase
 {
 public:
-  ITK_DISALLOW_COPY_AND_MOVE(FDFImageIO);
+  ITK_DISALLOW_COPY_AND_MOVE(FDF2ImageIO);
 
   /** Standard class type alias. */
-  using Self = FDFImageIO;
+  using Self = FDF2ImageIO;
   using Superclass = ImageIOBase;
   using Pointer = SmartPointer<Self>;
 
@@ -45,7 +45,7 @@ public:
   itkNewMacro(Self);
 
   /** Run-time type information (and related methods). */
-  itkTypeMacro(FDFImageIO, ImageIOBase);
+  itkTypeMacro(FDF2ImageIO, ImageIOBase);
 
   bool
   SupportsDimension(unsigned long dim) override
@@ -106,8 +106,8 @@ public:
   Write(const void * buffer) override;
 
 protected:
-  FDFImageIO();
-  ~FDFImageIO() override;
+  FDF2ImageIO();
+  ~FDF2ImageIO() override;
   void
   PrintSelf(std::ostream & os, Indent indent) const override;
 

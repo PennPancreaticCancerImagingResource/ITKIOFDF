@@ -16,47 +16,47 @@
  *
  *=========================================================================*/
 
-#include "itkFDFImageIOFactory.h"
+#include "itkFDF2ImageIOFactory.h"
 #include "itkCreateObjectFunction.h"
-#include "itkFDFImageIO.h"
+#include "itkFDF2ImageIO.h"
 #include "itkVersion.h"
 
 
 namespace itk
 {
-FDFImageIOFactory::FDFImageIOFactory()
+FDF2ImageIOFactory::FDF2ImageIOFactory()
 {
   this->RegisterOverride(
-    "itkImageIOBase", "itkFDFImageIO", "FDF Image IO", true, CreateObjectFunction<FDFImageIO>::New());
+    "itkImageIOBase", "itkFDF2ImageIO", "FDF2 Image IO", true, CreateObjectFunction<FDF2ImageIO>::New());
 }
 
-FDFImageIOFactory::~FDFImageIOFactory() = default;
+FDF2ImageIOFactory::~FDF2ImageIOFactory() = default;
 
 const char *
-FDFImageIOFactory::GetITKSourceVersion() const
+FDF2ImageIOFactory::GetITKSourceVersion() const
 {
   return ITK_SOURCE_VERSION;
 }
 
 const char *
-FDFImageIOFactory::GetDescription() const
+FDF2ImageIOFactory::GetDescription() const
 {
-  return "FDF ImageIO Factory, allows the loading of Varian FDF images into Insight";
+  return "FDF2 ImageIO Factory, allows the loading of Varian FDF2 images into Insight";
 }
 
 
 // Undocumented API used to register during static initialization.
 // DO NOT CALL DIRECTLY.
 
-static bool FDFImageIOFactoryHasBeenRegistered;
+static bool FDF2ImageIOFactoryHasBeenRegistered;
 
-void IOFDF_EXPORT
-     FDFImageIOFactoryRegister__Private()
+void IOFDF2_EXPORT
+     FDF2ImageIOFactoryRegister__Private()
 {
-  if (!FDFImageIOFactoryHasBeenRegistered)
+  if (!FDF2ImageIOFactoryHasBeenRegistered)
   {
-    FDFImageIOFactoryHasBeenRegistered = true;
-    FDFImageIOFactory::RegisterOneFactory();
+    FDF2ImageIOFactoryHasBeenRegistered = true;
+    FDF2ImageIOFactory::RegisterOneFactory();
   }
 }
 
