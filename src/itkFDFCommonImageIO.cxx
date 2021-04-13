@@ -56,6 +56,7 @@ ParseLine(std::string line)
   line = RemoveCharacters(line, '\"');
   line = RemoveCharacters(line, '[');
   line = RemoveCharacters(line, ']');
+  line = RemoveCharacters(line, '\r');
 
   // Need to deal with space between {}
   std::string::size_type startBracketPosition = line.find_first_of("{", 0);
