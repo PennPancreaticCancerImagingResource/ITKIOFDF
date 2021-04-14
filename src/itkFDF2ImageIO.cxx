@@ -106,11 +106,11 @@ FDF2ImageIO::ReadImageInformation()
       break;
     }
 
-    // Formats the lines in the FDF2 header such as removing whitespace between {}
+    // Formats the lines in the FDF header such as removing whitespace between {}
     line = ParseLine(line);
     Tokenize(line, tokens, " ;");
 
-    if (tokens.size() == 4)
+    if (tokens.size() >= 4)
     {
       type = tokens[0];
       name = tokens[1];
