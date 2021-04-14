@@ -21,8 +21,8 @@
 #include "itkChangeInformationImageFilter.h"
 #include <vtkRenderWindowInteractor.h>
 
-#include "itkFDFImageIOFactory.h"
-#include "itkFDFImageIO.h"
+#include "itkFDF2ImageIOFactory.h"
+#include "itkFDF2ImageIO.h"
 
 #include <vtkImageViewer.h>
 
@@ -41,7 +41,7 @@ main(int argc, char ** argv)
   using ChangeInformationFilter = itk::ChangeInformationImageFilter<ImageType>;
 
   // Register FDF Factory
-  itk::FDFImageIOFactory::RegisterOneFactory();
+  itk::FDF2ImageIOFactory::RegisterOneFactory();
 
   ReaderType::Pointer              reader = ReaderType::New();
   NormalizeFilter::Pointer         normalizer = NormalizeFilter::New();
