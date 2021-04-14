@@ -42,13 +42,13 @@ FDF2ImageIO::CanReadFile(const char * file)
   }
 
   bool                   extensionFound = false;
-  std::string::size_type FDF2Pos = filename.rfind(".FDF2");
+  std::string::size_type FDF2Pos = filename.rfind(".FDF");
   if ((FDF2Pos != std::string::npos) && (FDF2Pos == filename.length() - 4))
   {
     extensionFound = true;
   }
 
-  FDF2Pos = filename.rfind(".FDF2");
+  FDF2Pos = filename.rfind(".fdf");
   if ((FDF2Pos != std::string::npos) && (FDF2Pos == filename.length() - 4))
   {
     extensionFound = true;

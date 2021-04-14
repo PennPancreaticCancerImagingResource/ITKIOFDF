@@ -41,7 +41,7 @@ FDF2ImageIOFactory::GetITKSourceVersion() const
 const char *
 FDF2ImageIOFactory::GetDescription() const
 {
-  return "FDF2 ImageIO Factory, allows the loading of Varian FDF2 images into Insight";
+  return "FDF2 ImageIO Factory, allows the loading of Varian FDF images into Insight";
 }
 
 
