@@ -106,6 +106,17 @@ FDF2ImageIO::ReadImageInformation()
       break;
     }
 
+    if (line.find('\f') != std::string::npos)
+    {
+      //std::cout << "Line has form feed" << std::endl;
+      char b;
+      inFile.read(&b,1);
+      while (b != 0) {
+        inFile.read(&b,1);
+      }
+      break;
+    }
+
     // Formats the lines in the FDF header such as removing whitespace between {}
     line = ParseLine(line);
     Tokenize(line, tokens, " ;");
