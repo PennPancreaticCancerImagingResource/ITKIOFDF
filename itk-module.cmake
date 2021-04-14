@@ -18,7 +18,7 @@ itk_module(IOFDF2
     ITKTestKernel
     ITKTransform
   FACTORY_NAMES
-    ImageIO::FDF
+    ImageIO::FDF2
   DESCRIPTION
     "${DOCUMENTATION}"
   EXCLUDE_FROM_DEFAULT
